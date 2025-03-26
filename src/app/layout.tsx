@@ -25,7 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0D0D0D] w-screen min-h-screen overflow-x-hidden`}
+        suppressHydrationWarning
+        style={{
+          scrollbarWidth: "none",
+        }}
       >
         {children}
       </body>
