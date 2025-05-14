@@ -19,7 +19,7 @@ const WeAre = () => {
   return (
     <div className="w-[40vw]  mx-auto my-30 flex justify-between font-semibold text-3xl">
       <div className=" ">Powered by</div>
-      <div className=""><ArrowRight size={40}/></div>
+      <div className=""><ArrowRight size={50}/></div>
       <div className=" w-[50%] overflow-hidden relative">
         <AnimatePresence mode="wait">
           <motion.div

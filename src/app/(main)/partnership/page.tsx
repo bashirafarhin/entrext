@@ -1,5 +1,8 @@
+"use client"
 import React from 'react'
 import Faq from '../../../components/FaqSection'
+import HowToApply from './_components/HowToApply'
+import PartnershipPlans from './_components/PartnershipPlans'
 
 const faq = [
   {
@@ -71,13 +74,15 @@ const faq = [
 ];
 
 
-const page = () => {
+const PartnershipPage = () => {
   return (
     <div className='w-[70vw] mx-auto'>
+        <HowToApply/>
+        <PartnershipPlans />
         <Faq faq={faq} />
     </div>
   )
 }
 
-export default page
+export default PartnershipPage
 

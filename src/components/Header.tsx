@@ -5,6 +5,7 @@ import { Handshake, Users, Info } from "lucide-react";
 import AnimatedDock from "@/components/animata/container/animated-dock";
 import Button from "./common/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,11 +18,10 @@ const Header = () => {
     <>
       <div className="sticky flex items-center justify-between mt-5 top-0 right-0 z-50 bg-transparent backdrop-blur-md w-[70vw] mx-auto">
         <div>
-          {/* <img src="/logo.png" alt="Logo" width={50} height={50} /> */}
-          <Image src="/logo.png" alt="Logo" width={50} height={50} priority/>
+          <Link href="/">
+            <Image src="/logo.png" alt="Logo" width={50} height={50} priority />
+          </Link>
         </div>
-        
-
 
         {/* middle bar */}
         <div className="flex justify-center items-center">
@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* apply button */}
         <div onClick={() => setIsModalOpen(true)}>
-          <Button text="Apply"/>
+          <Button text="Apply" />
         </div>
       </div>
 

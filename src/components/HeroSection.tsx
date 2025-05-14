@@ -48,7 +48,7 @@ const HeroSection = () => {
         transition={{ duration: 0.5, type: "tween", delay: 0.9 }}
       >
         {/* <InfiniteLoop /> */}
-        <Marquee items={arr}/>
+        <Marquee items={arr} itemClassName='text-[1.8vw] font-semibold' direction='forward'/>
       </motion.div>
 
     </div>

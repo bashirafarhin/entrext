@@ -44,11 +44,10 @@ const fadeInUp = {
 const ProductsInmaking = () => {
   return (
     <div className="w-[70vw] mx-auto text-center py-20">
-      <div className="mb-10">
+      {/* <div className="mb-10"> */}
         <div className="text-[2.5vw] font-semibold">Products in Making</div>
-        <div className="text-gray-500">more coming soon</div>
-      </div>
-      <div className="w-[80%] mx-auto grid grid-cols-2 grid-rows-3 gap-6">
+      {/* </div> */}
+      <div className="w-[80%] mx-auto my-7 grid grid-cols-2 grid-rows-3 gap-6">
         {projects.map((ele, ind) => (
           <motion.div
             key={ind}
@@ -65,6 +64,7 @@ const ProductsInmaking = () => {
           </motion.div>
         ))}
       </div>
+      <div className="font-semibold text-gray-500">more coming soon...</div>
     </div>
   );
 };

@@ -25,10 +25,10 @@
   background-color: "#FF5513";
 }
 
-html {
+/* html {
   min-height: 100vh;
   scroll-behavior: smooth;
-}
+} */
 
 .text-reveal-container p {
   background: linear-gradient(to right, white 50%, #252525 50%);
@@ -178,4 +178,33 @@ body {
 
 .blur-ends {
   -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+.marquee-item {
+  font-family: "Satoshi Variable", Arial, sans-serif;
+  font-size: 96px;
+  line-height: 144px;
+}
+
+.marquee-bg {
+  margin-top: 7.5rem;     /* 30 * 0.25rem = 7.5rem */
+  margin-bottom: 7.5rem;
+  width: 100vw;
+  background-color: #FF5513;
+}
+
+
+/* Optional: Prevent default scrollbar from showing up */
+html, body {
+  overflow-y: auto; /* Ensure smooth scrolling */
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.shadow {
+  box-shadow:
+  rgba(255, 85, 19, 0.2) 0px 12px 28px 0px,
+  rgba(255, 85, 19, 0.1) 0px 2px 4px 0px,
+  rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
 }

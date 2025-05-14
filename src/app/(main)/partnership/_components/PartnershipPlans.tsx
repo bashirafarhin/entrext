@@ -1,9 +1,10 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function PartnershipPlans() {
+const PartnershipPlans = () => {
   return (
-    <motion.div
+    <div>
+      <motion.div
       className="w-[70vw] container mx-auto px-4 py-16 max-w-6xl mb-30"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -234,5 +235,8 @@ export default function PartnershipPlans() {
         </div>
       </div>
     </motion.div>
+    </div>
   );
 }
+
+export default PartnershipPlans

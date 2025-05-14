@@ -1,60 +1,57 @@
 "use client";
 import React from "react";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Aboutus from "@/components/Aboutus";
 import Whatwedo from "@/components/Whatwedo";
-// import OurValues from "@/components/OurValues";
+import OurValues from "@/components/OurValues";
 import ProductsInmaking from "@/components/ProductsInmaking";
 import Marquee from "@/components/Marquee";
 import WhatWeMake from "@/components/WhatWeMake";
 import FaqSection from "@/components/FaqSection";
-import HowToApply from "@/components/HowToApply";
 import StatsSection from "@/components/StatsSection";
-import PartnershipPlans from "@/components/PatnerShipPlans";
-import ScrollSections from "@/components/ScrollSections";
+import PartnershipWith from "@/components/PartnershipWith";
 
 const arr1 = [
   "Possibilities",
-  "*",
+  // "*",
   "Community",
-  "*",
+  // "*",
   "Smart",
-  "*",
+  // "*",
   "People",
-  "*",
+  // "*",
   "Future",
-  "*",
+  // "*",
   "Solutions",
-  "*",
+  // "*",
 ];
 
 const arr2 = [
   "Niches",
-  "*",
+  // "*",
   "Thoughts",
-  "*",
+  // "*",
   "Apps",
-  "*",
+  // "*",
   "Community",
-  "*",
+  // "*",
   "Fluff",
-  "*",
+  // "*",
   "Solutions",
-  "*",
+  // "*",
 ];
 
 const arr3 = [
   "Impact",
-  "*",
+  // "*",
   "Growth",
-  "*",
+  // "*",
   "Ideas",
-  "*",
+  // "*",
   "Tools",
-  "*",
+  // "*",
   "Creators",
-  "*",
+  // "*",
 ];
 
 const faq = [
@@ -113,27 +110,21 @@ const faq = [
 
 const LandingPage = () => {
   return (
-    <div className="border-2 border-transparent relative bg-gradient-to-b from-[#0D0D0D] to-[#161616]">
-      {/* {/* Top Right Larger Orange Gradient */}
-      <div className="absolute top-0 right-0 w-[60vw] h-[70vh] bg-gradient-to-br from-[#FF5513] via-transparent to-transparent rounded-full blur-3xl opacity-60 z-0" />
-      {/* Bottom Left Larger Orange Gradient */}
-      <div className="absolute bottom-0 left-0 w-[60vw] h-[70vh] bg-gradient-to-tl from-[#FF5513] via-transparent to-transparent rounded-full blur-3xl opacity-60 z-0" />
-      <Header />
+      <>
       <HeroSection />
       <Aboutus />
       <Whatwedo />
-      <Marquee items={arr1} className="my-30 w-[70vw]" />
+      <Marquee items={arr1} className="marquee-bg" itemClassName="marquee-item"/>
       <WhatWeMake />
       <ProductsInmaking />
-      <Marquee items={arr2} className="my-30 w-[70vw]" />
-      {/* <OurValues /> */}
-      <ScrollSections />
-      <HowToApply/>
+      <PartnershipWith />
+      <Marquee items={arr2} className="marquee-bg" itemClassName="marquee-item"/>
+      <OurValues />
+      {/* <ScrollSections /> */}
       <StatsSection />
-      <Marquee items={arr3} className="my-30 w-[70vw]" />
+      <Marquee items={arr3} className="marquee-bg" itemClassName="marquee-item"/>
       <FaqSection faq = {faq} />
-      <PartnershipPlans />
-    </div>
+      </>
   );
 };
 
