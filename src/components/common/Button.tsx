@@ -1,26 +1,29 @@
-import Link from "next/link";
-import { motion } from "motion/react";
+// import Link from "next/link";
+// import { motion } from "motion/react";
+// import React from "react";
+
+// const Button = ({ text, className = "" ) => {
+//   return (
+//       <button className={`button-shadow rounded-md px-2 py-1 ${className}`}>
+//         {text}
+//       </button>
+//   );
+// };
+
+// export default Button;
+'use client';
 import React from "react";
+import { motion } from "framer-motion"; // ✅ Correct import
 
-interface Props {
-  text: string;
-}
-
-const Button = ({ text }: Props) => {
+const Button = ({ text, className = "" }) => { // ✅ Fixed destructuring
   return (
-    <motion.div
+    <motion.button // Optional: motion enhancement
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="relative"
+      className={`button-shadow rounded-md px-4 py-2 ${className}`}
     >
-      <Link
-        href={"/"}
-        className="px-4 sm:px-5 py-3 sm:py-3.5 text-lg sm:text-xl rounded-lg font-bold text-center text-white shadow-md bg-gradient-to-r from-orange-500 to-red-500 relative overflow-hidden"
-      >
-        <span className="relative z-10">{text}</span>
-      </Link>
-    </motion.div>
+      {text}
+    </motion.button>
   );
 };
 
