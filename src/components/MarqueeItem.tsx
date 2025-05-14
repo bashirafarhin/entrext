@@ -2,8 +2,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const MarqueeItem = ({ items = [], className = "" }) => {
-  const containerRef = useRef(null);
+interface MarqueeItemProps {
+  items: string[];
+  className?: string;
+}
+
+const MarqueeItem: React.FC<MarqueeItemProps> = ({ items, className = "" }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {

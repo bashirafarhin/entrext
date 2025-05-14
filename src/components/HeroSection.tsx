@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import InfiniteLoop from "./InfiniteLoop";
 import Marquee from './Marquee';
 
 const arr: string[] = [

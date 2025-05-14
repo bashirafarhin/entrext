@@ -31,12 +31,12 @@ const ScrollSections = () => {
 >
 
       {/* Left Sticky Text */}
-      <div
+      <motion.div
         className="sticky top-0 text-[5vw] w-1/2 h-[100vh] flex items-center justify-center"
         style={{ y: weMakeY, opacity: weMakeOpacity }}
       >
-        <TextAnimation text="Our Values"/>
-      </div>
+        <TextAnimation text="Our Values" className=""/>
+      </motion.div>
 
       {/* Right Animated Items */}
       <div className="w-1/2 h-[90vh] sticky top-0 relative overflow-hidden">

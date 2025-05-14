@@ -4,9 +4,16 @@ import { motion, AnimatePresence } from "motion/react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
+interface FaqSectionProps {
+  faq: FAQ[];
+}
 
-const FaqSection = ({ faq }) => {
+const FaqSection = ({ faq }: FaqSectionProps) => {
   return (
     <div className="w-[70vw] mx-auto h-full flex justify-center items-center gap-4 flex-col my-40">
       {/* top Text */}
@@ -15,15 +22,9 @@ const FaqSection = ({ faq }) => {
       </span>
       {/* Questions Section */}
       <div className="flex justify-center items-center flex-col mx-auto h-auto overflow-hidden mt-8 border border-gray-800 rounded-2xl">
-        {faq.map(({ answer, question }, index) => {
-          return (
-            <QuestionsAndAnswer
-              question={question}
-              answer={answer}
-              key={index}
-            />
-          );
-        })}
+        {faq.map(({ answer, question }: FAQ, index: number) => (
+          <QuestionsAndAnswer question={question} answer={answer} key={index} />
+        ))}
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const TextAnimation = ({ text, initialColor = "gray", className = "" }: TextAnim
     const split = new SplitType(container.current, { types: "words" });
 
     // Set initial color
-    split.words.forEach((word) => {
+    split.words?.forEach((word) => {
       word.classList.add("text-inactive");
       word.style.color = initialColor === "gray" ? "rgb(107 114 128)" : initialColor;
     });
@@ -38,7 +38,7 @@ const TextAnimation = ({ text, initialColor = "gray", className = "" }: TextAnim
         scrub: true,
       },
       onUpdate: () => {
-        split.words.forEach((word) => {
+        split.words?.forEach((word) => {
           word.classList.remove("text-inactive");
           word.classList.add("text-animated");
         });
