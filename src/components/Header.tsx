@@ -18,7 +18,7 @@ const Header = () => {
       <div className="sticky flex items-center justify-between mt-5 top-0 right-0 z-50 bg-transparent backdrop-blur-md w-[70vw] mx-auto">
         <div>
           {/* <img src="/logo.png" alt="Logo" width={50} height={50} /> */}
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
+          <Image src="/logo.png" alt="Logo" width={50} height={50} priority/>
         </div>
         
 

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Aboutus from "@/components/Aboutus";
 import Whatwedo from "@/components/Whatwedo";
-import OurValues from "@/components/OurValues";
+// import OurValues from "@/components/OurValues";
 import ProductsInmaking from "@/components/ProductsInmaking";
 import Marquee from "@/components/Marquee";
 import WhatWeMake from "@/components/WhatWeMake";
@@ -12,6 +12,7 @@ import FaqSection from "@/components/FaqSection";
 import HowToApply from "@/components/HowToApply";
 import StatsSection from "@/components/StatsSection";
 import PartnershipPlans from "@/components/PatnerShipPlans";
+import ScrollSections from "@/components/ScrollSections";
 
 const arr1 = [
   "Possibilities",
@@ -125,7 +126,8 @@ const LandingPage = () => {
       <WhatWeMake />
       <ProductsInmaking />
       <Marquee items={arr2} className="my-30 w-[70vw]" />
-      <OurValues />
+      {/* <OurValues /> */}
+      <ScrollSections />
       <HowToApply/>
       <StatsSection />
       <Marquee items={arr3} className="my-30 w-[70vw]" />
