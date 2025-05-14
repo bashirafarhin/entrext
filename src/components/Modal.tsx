@@ -39,7 +39,8 @@ const Modal = ({ isOpen, onClose, onConfirm }: ModalProps) => {
     };
   }, [isOpen]);
 
-  const handleClose = () => {
+  // Explicitly type handleClose function
+  const handleClose: () => void = () => {
     setIsVisible(false);
     setTimeout(() => onClose(), 300);
   };

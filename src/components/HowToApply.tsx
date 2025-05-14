@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const Steps = [
@@ -35,7 +35,6 @@ const Steps = [
 
 const HowToApply = () => {
   const divRef = useRef(null);
-  const isInView = useInView(divRef, { once: true });
 
   return (
     <>

@@ -8,6 +8,7 @@ const PricingSection = () => {
 
   const handlePlanSelect = (plan: string) => {
     setSelected(plan);
+    console.log(selected)
     // toast({
     //   title: "Plan Selected",
     //   description: `You've selected the ${plan} plan.`,
