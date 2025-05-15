@@ -18,7 +18,7 @@ const FaqSection = ({ faq }: FaqSectionProps) => {
     <div className="w-[70vw] mx-auto h-full flex justify-center items-center gap-4 flex-col my-40">
       {/* top Text */}
       <span className="lg:text-4xl font-bold text-xl ">
-        Frequently Asked Questions (FAQs)
+        Frequently Asked Questions
       </span>
       {/* Questions Section */}
       <div className="flex justify-center items-center flex-col mx-auto h-auto overflow-hidden mt-8 border border-gray-800 rounded-2xl">

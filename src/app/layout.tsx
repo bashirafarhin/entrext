@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
+import ScrollProvider from "./ScrollProvider";
 
 // Import Poppins font
 const poppins = Poppins({
@@ -23,9 +24,13 @@ const items = [
   "Get In Touch",
   "Get In Touch",
   "Get In Touch",
+  "Get In Touch",
+  "Get In Touch",
 ];
 
 const items2 = [
+  "Contact Us",
+  "Contact Us",
   "Contact Us",
   "Contact Us",
   "Contact Us",
@@ -41,36 +46,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-[#0D0D0D] w-screen min-h-screen overflow-x-hidden ${poppins.className}`}
+        className={`antialiased bg-[#0D0D0D] ${poppins.className}`}
         suppressHydrationWarning
       >
-        <div className="border-2 border-transparent relative bg-gradient-to-b from-[#0D0D0D] to-[#161616]">
-          {/* {/* Top Right Larger Orange Gradient */}
+        <ScrollProvider>
+          <div className="border-1 border-transparent relative bg-gradient-to-b from-[#0D0D0D] to-[#161616]">
+
           <div className="absolute top-0 right-0 w-[60vw] h-[70vh] bg-gradient-to-br from-[#FF5513] via-transparent to-transparent rounded-full blur-3xl opacity-60 z-0" />
-          {/* Bottom Left Larger Orange Gradient */}
           <div className="absolute bottom-0 left-0 w-[60vw] h-[70vh] bg-gradient-to-tl from-[#FF5513] via-transparent to-transparent rounded-full blur-3xl opacity-60 z-0" />
           <Header />
           {children}
-          <div className="relative h-[300px] w-full">
-            {/* Top-to-bottom diagonal (backward) */}
-            <Marquee
+            {/* <Marquee
               items={items}
-              className="absolute top-1/2 left-0 w-full -translate-y-1/2 rotate-[3deg]"
+              className=""
               itemClassName="marquee-item"
               direction="backward"
-            />
+            /> */}
 
             {/* Bottom-to-top diagonal (forward) */}
             <Marquee
               items={items2}
-              className="absolute top-1/2 left-0 w-full -translate-y-1/2 rotate-[-3deg]"
+              className="marquee-bg rotate-[5deg]"
               itemClassName="marquee-item"
-              direction="forward"
+              // direction="forward"
             />
-          </div>
-
           <Footer />
         </div>
+        </ScrollProvider>
       </body>
     </html>
   );

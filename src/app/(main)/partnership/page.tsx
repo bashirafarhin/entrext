@@ -3,6 +3,7 @@ import React from 'react'
 import Faq from '../../../components/FaqSection'
 import HowToApply from './_components/HowToApply'
 import PartnershipPlans from './_components/PartnershipPlans'
+import OurPartners from './_components/OurPartners'
 
 const faq = [
   {
@@ -77,8 +78,9 @@ const faq = [
 const PartnershipPage = () => {
   return (
     <div className='w-[70vw] mx-auto'>
-        <HowToApply/>
+        <div className='mt-20'><HowToApply/></div>
         <PartnershipPlans />
+        <OurPartners />
         <Faq faq={faq} />
     </div>
   )

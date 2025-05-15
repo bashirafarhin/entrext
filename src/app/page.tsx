@@ -10,6 +10,8 @@ import WhatWeMake from "@/components/WhatWeMake";
 import FaqSection from "@/components/FaqSection";
 import StatsSection from "@/components/StatsSection";
 import PartnershipWith from "@/components/PartnershipWith";
+import { WhyUs } from "@/components/WhyUs";
+import { EntrextNewEra } from "@/components/EntrextNewEra";
 
 const arr1 = [
   "Possibilities",
@@ -120,10 +122,11 @@ const LandingPage = () => {
       <PartnershipWith />
       <Marquee items={arr2} className="marquee-bg" itemClassName="marquee-item"/>
       <OurValues />
-      {/* <ScrollSections /> */}
+      <WhyUs />
       <StatsSection />
       <Marquee items={arr3} className="marquee-bg" itemClassName="marquee-item"/>
       <FaqSection faq = {faq} />
+      <EntrextNewEra />
       </>
   );
 };
