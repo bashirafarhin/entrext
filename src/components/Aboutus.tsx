@@ -1,9 +1,9 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
-const messages = ["AI", "Community","People"];
+const messages = ["AI", "Community", "People"];
 
 const WeAre = () => {
   const [index, setIndex] = useState(0);
@@ -17,18 +17,20 @@ const WeAre = () => {
   }, []);
 
   return (
-    <div className="w-[40vw]  mx-auto my-30 flex justify-between font-semibold text-3xl">
-      <div className=" ">Powered by</div>
-      <div className=""><ArrowRight size={50}/></div>
-      <div className=" w-[50%] overflow-hidden relative">
+    <div className="w-[40vw] mx-auto my-40 flex items-center justify-between font-semibold text-3xl  whitespace-nowrap">
+      <div>Powered by</div>
+      <div className="mx-4">
+        <Image src="/arrow.svg" width={50} height={50} alt="arrow" /> {/* ✅ Use absolute path */}
+      </div>
+      <div className="w-[50%] h-[40px] overflow-hidden relative">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}
-            className="absolute w-full whitespace-nowrap"
+            transition={{ duration: 0.4 }} // ⬅️ Shortened for snappier effect
+            className="absolute w-full"
           >
             {messages[index]}
           </motion.div>
@@ -39,4 +41,3 @@ const WeAre = () => {
 };
 
 export default WeAre;
-

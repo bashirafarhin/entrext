@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./common/Button";
+import TextAnimation from "./Animations/TextAnimation";
 
 const items = [
   {
@@ -19,6 +20,7 @@ const items = [
 const PartnershipWith = () => {
   return (
     <div className="w-[70vw] mx-auto my-40 text-center">
+      <div className="heading my-30 text-center"><TextAnimation text="Our Partnership with you"/></div>
       <div className="flex gap-5 mb-15">
         <div className="rounded-lg p-4 h-fit shadow">
           <div className="text-md font-semibold mb-2">{items[0].title}</div>

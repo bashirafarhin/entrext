@@ -18,17 +18,17 @@ export const items = [
 
 export default function WhatWeMake() {
   return (
-    <section className="w-[70vw] mx-auto mb-24">
-      <div className="text-center mb-8">
-        <TextAnimation text="What we make?" className='text-[3vw] font-bold'/>
+    <section className="w-[70vw] mx-auto my-25 text-center">
+      <div className="text-center mb-8 heading">
+        <TextAnimation text="What we make?"/>
       </div>
 
-      <div className="grid grid-cols-2 gap-5 place-items-center">
+      <div className="my-10">
         {items.slice(0, 6).map((item, i) => {
           const Icon = item.icon;
           return (
             <AnimatedCard key={i}>
-              <Icon size={80} color="#FF5513" />
+              <Icon size={100} color="#FF5513" />
               <h2 className="text-xl font-semibold text-center">
                 {item.label}
               </h2>

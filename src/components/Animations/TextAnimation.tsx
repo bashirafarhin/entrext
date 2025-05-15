@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface TextAnimationProps {
   text: string;
   initialColor?: string; // optional
-  className: string;
+  className?: string;
 }
 
 const TextAnimation = ({ text, initialColor = "gray", className = "" }: TextAnimationProps) => {
@@ -33,7 +33,7 @@ const TextAnimation = ({ text, initialColor = "gray", className = "" }: TextAnim
       stagger: 0.1,
       scrollTrigger: {
         trigger: container.current,
-        start: "top 99%",
+        start: "top 50%",
         end: "bottom 60%",
         scrub: true,
       },

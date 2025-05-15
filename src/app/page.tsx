@@ -10,50 +10,50 @@ import WhatWeMake from "@/components/WhatWeMake";
 import FaqSection from "@/components/FaqSection";
 import StatsSection from "@/components/StatsSection";
 import PartnershipWith from "@/components/PartnershipWith";
-import { WhyUs } from "@/components/WhyUs";
+import WhyUs from "@/components/WhyUs";
 import { EntrextNewEra } from "@/components/EntrextNewEra";
 
 const arr1 = [
   "Possibilities",
-  // "*",
+  "*",
   "Community",
-  // "*",
+  "*",
   "Smart",
-  // "*",
+  "*",
   "People",
-  // "*",
+  "*",
   "Future",
-  // "*",
+  "*",
   "Solutions",
-  // "*",
+  "*",
 ];
 
 const arr2 = [
   "Niches",
-  // "*",
+  "*",
   "Thoughts",
-  // "*",
+  "*",
   "Apps",
-  // "*",
+  "*",
   "Community",
-  // "*",
-  "Fluff",
-  // "*",
+  "*",
+  "No Fluff",
+  "*",
   "Solutions",
-  // "*",
+  "*",
 ];
 
 const arr3 = [
   "Impact",
-  // "*",
+  "*",
   "Growth",
-  // "*",
+  "*",
   "Ideas",
-  // "*",
+  "*",
   "Tools",
-  // "*",
+  "*",
   "Creators",
-  // "*",
+  "*",
 ];
 
 const faq = [
@@ -119,12 +119,12 @@ const LandingPage = () => {
       <Marquee items={arr1} className="marquee-bg" itemClassName="marquee-item"/>
       <WhatWeMake />
       <ProductsInmaking />
+      <WhyUs />
       <PartnershipWith />
       <Marquee items={arr2} className="marquee-bg" itemClassName="marquee-item"/>
-      <OurValues />
-      <WhyUs />
-      <StatsSection />
       <Marquee items={arr3} className="marquee-bg" itemClassName="marquee-item"/>
+      <OurValues />
+      <StatsSection />
       <FaqSection faq = {faq} />
       <EntrextNewEra />
       </>

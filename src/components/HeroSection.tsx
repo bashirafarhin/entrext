@@ -15,23 +15,23 @@ const arr: string[] = [
 const HeroSection = () => {
   return (
 
-    <div className="w-[70vw] mt-20 mx-auto flex flex-col px-4">
+    <div className="w-[70vw] mt-35 mx-auto flex flex-col px-4">
       <div className="w-full flex flex-col gap-6">
         <motion.h2
-          className="text-[3vw] font-bold leading-tight"
+          className="heading"
           animate={{ y: 0, opacity: 1 }}
-          initial={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.5, type: "tween", delay: 0.3 }}
+          initial={{ y: 20, opacity: 0 }}
+          transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
         >
           <span className="block">Building  Micro & Macro Tech</span>
           <span className="block ">Products For the Future !</span>
         </motion.h2>
 
         <motion.p
-          className="text-gray-500 text-lg font-medium leading-relaxed "
+          className="para mt-3"
           animate={{ y: 0, opacity: 1 }}
-          initial={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.5, type: "tween", delay: 0.6 }}
+          initial={{ y: 20, opacity: 0 }}
+          transition={{ duration: 0.5, type: "tween", delay: 0.1 }}
         >
           A product studio that turns everyday problems into smart, useful apps and tools.<br/>
           Built by real people who own what they create.<br/>
@@ -42,13 +42,13 @@ const HeroSection = () => {
 
       {/* Infinite Scrolling Section */}
       <motion.div
-        className="w-full mt-15"
+        className="w-full mt-10"
         animate={{ y: 0, opacity: 1 }}
-        initial={{ y: 100, opacity: 0 }}
-        transition={{ duration: 0.5, type: "tween", delay: 0.9 }}
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.5, type: "tween", delay: 0.2 }}
       >
         {/* <InfiniteLoop /> */}
-        <Marquee items={arr} itemClassName='text-[1.8vw] font-semibold' direction='forward'/>
+        <Marquee items={arr} itemClassName='text-[1.8vw] font-semibold'/>
       </motion.div>
 
     </div>

@@ -1,9 +1,5 @@
 "use client";
-import React, { useRef, useLayoutEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
 
 const items = [
   {
@@ -17,51 +13,20 @@ const items = [
 ];
 
 const OurValues = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const elements = container.querySelectorAll("[data-scroll-speed]");
-
-    elements.forEach((el) => {
-      const speed = parseFloat(el.getAttribute("data-scroll-speed") || "1");
-      gsap.to(el, {
-        y: `${-speed * 200}px`, // speed multiplier increased for stronger motion
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
-  }, []);
 
   return (
     <div
-      ref={containerRef}
-      className="w-[50vw] h-[100vh] mx-auto flex justify-between relative"
+      className="w-[50vw] mx-auto"
     >
-      <div className="flex items-center justify-center text-[3vw]">Our Value</div>
+      <div className="text-center heading">Our Values</div>
 
-      <div className="w-[60%] flex flex-col justify-end">
+      <div className="flex align-center justify-center border-2 border-pink-500">
         <div
           className="border border-gray-500 rounded-lg text-center p-4"
           data-scroll-speed="3"
         >
           <div className="text-md font-semibold mb-2">{items[0].title}</div>
           <div className="text-gray-400">{items[0].desc}</div>
-        </div>
-
-        <div
-          className="border border-gray-500 rounded-lg text-center p-4"
-          data-scroll-speed="1"
-        >
-          <div className="text-md font-semibold mb-2">{items[1].title}</div>
-          <div className="text-gray-400">{items[1].desc}</div>
         </div>
       </div>
     </div>

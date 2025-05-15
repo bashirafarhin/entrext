@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
+import Button from "./common/Button";
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,18 +12,16 @@ const Modal = ({ isOpen, onClose, onConfirm }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show animation on open
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
     }
   }, [isOpen]);
 
-  // Click outside to close
   const handleClose = useCallback(() => {
     setIsVisible(false);
     setTimeout(() => onClose(), 300);
-  }, [onClose]); // Memoize handleClose with onClose as the dependency
+  }, [onClose]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -40,13 +40,13 @@ const Modal = ({ isOpen, onClose, onConfirm }: ModalProps) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen, handleClose]); // Now handleClose is memoized and safe to be used here
+  }, [isOpen, handleClose]);
 
   if (!isOpen && !isVisible) return null;
 
   return (
     <div
-      className={`fixed backdrop-blur-sm text-white h-[100vh] text-center inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
+      className={`fixed inset-0 z-50 flex items-center h-[100vh] justify-center backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -56,20 +56,25 @@ const Modal = ({ isOpen, onClose, onConfirm }: ModalProps) => {
           isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
-        <h2 className="text-xl font-bold mb-4">Apply for?</h2>
-        <div className="flex gap-6 mt-4">
-          <button
-            className="px-2 py-1 button-shadow rounded"
-            onClick={onConfirm}
-          >
-            Partnership
-          </button>
-          <button
-            className="px-2 py-1 button-shadow rounded"
-            onClick={handleClose}
-          >
-            Content Creation
-          </button>
+        <h2 className="text-xl font-bold mb-6  text-center">Apply for?</h2>
+        <div className="flex gap-8">
+          <div className=" flex flex-col items-center gap-3">
+            <Image src="/logo.png" width={60} height={60} alt="partnership" />
+            <div onClick={onConfirm}>
+              <Button text="Partnership" />
+            </div>
+          </div>
+          <div className=" flex flex-col items-center gap-3">
+            <Image
+              src="/logo.png"
+              width={60}
+              height={60}
+              alt="content creation"
+            />
+            <div onClick={onConfirm}>
+              <Button text="Content Creation" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

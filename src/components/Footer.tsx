@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-[70vw] mx-auto my-20 mx-auto my-20 text-center">
+    <div className="my-20 mx-auto my-20 text-center">
       <footer className="bg-white bg-gradient-to-b from-[#0D0D0D] to-[#161616]">
         <div className="mx-auto max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">

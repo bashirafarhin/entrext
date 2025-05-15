@@ -1,65 +1,66 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const prod = [
-  "Solves Real Problems",
-  "Delivers Real Value",
-  "Highly Adaptable",
-  "Loved by Users",
+const items = [
+  {
+    title: "Solves Real Problems",
+    icon: "🧠",
+    desc: "Built to address actual pain points, not just trends.",
+  },
+  {
+    title: "Delivers Real Value",
+    icon: "💎",
+    desc: "Every feature is designed to make life easier or better.",
+  },
+  {
+    title: "Highly Adaptable",
+    icon: "🔧",
+    desc: "Flexible solutions that grow and evolve with your needs.",
+  },
+  {
+    title: "Loved by Users",
+    icon: "❤️",
+    desc: "User-first design that sparks joy and loyalty.",
+  },
 ];
 
-export const WhyUs = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
 
-    const items = container.querySelectorAll(".prod-item");
-
-    items.forEach((el, index) => {
-      const fromX = index % 2 === 0 ? "-100%" : "100%";
-
-      gsap.fromTo(
-        el,
-        { x: fromX, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%", // 10% into viewport
-            end: "top 30%",   // adjust as needed
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
+const WhyUs = () => {
   return (
-    <div ref={containerRef} className="w-[70vw] mx-auto my-20 text-center">
-      <div className="text-[2vw] mb-10">Why Entrext?</div>
-      <div className="overflow-hidden">
-        {prod.map((title, index) => (
-          <div
-            key={index}
-            className="prod-item my-6 text-2xl md:text-4xl font-bold"
-          >
-            {title}
-          </div>
-        ))}
+    <div data-scroll-section className="w-[70vw] mx-auto p-3 my-20">
+      <div className="text-center heading">Why Entrext</div>
+      
+      <div className="flex items-center justify-center gap-6 my-10">
+        {items.map((ele, ind) => {
+          return (
+            <div
+              key={ind}
+              className="h-[400px] relative overflow-hidden rounded-lg border border-gray-500"
+              data-scroll
+              data-scroll-speed="3"
+            >
+              {/* Background Image */}
+              <Image
+                src="/space.jpg"
+                alt="space"
+                fill
+                className="object-cover z-0"
+              />
+
+              {/* Overlay Content */}
+              <div className="relative z-10 flex flex-col justify-center p-6 text-white text-center">
+                <div className="text-xl font-bold mb-2">{ele.title}</div>
+                <div className="text-bold text-gray-500">{ele.desc}</div>
+                <div className="flex-end text-[7vw]">{ele.icon}</div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
+
+export default WhyUs;
