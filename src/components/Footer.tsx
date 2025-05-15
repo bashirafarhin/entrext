@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Twitter,
   Instagram,
@@ -15,7 +16,8 @@ const Footer = () => {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link href="/" className="flex items-center">
-                <img src="/logo.png" className="w-30 h-30" alt="Site Logo" />
+                {/* <img src="/logo.png" className="w-30 h-30" alt="Site Logo" /> */}
+                <Image src="/logo.png" width={100} height={100} alt="Site Logo"/>
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
